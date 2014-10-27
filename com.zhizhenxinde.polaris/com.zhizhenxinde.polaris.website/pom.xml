@@ -10,4 +10,12 @@
 	</parent>
 	<artifactId>com.zhizhenxinde.polaris.website</artifactId>
 	<packaging>war</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.zhizhenxinde.polaris</groupId>
+			<artifactId>com.zhizhenxinde.polaris.restful</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
 </project>

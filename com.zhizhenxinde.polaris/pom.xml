@@ -2,13 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.zzxd</groupId>
-	<artifactId>com.zzxd.test.web</artifactId>
+	<groupId>com.zhizhenxinde.polaris</groupId>
+	<artifactId>com.zhizhenxinde.polaris</artifactId>
 	<version>1.0</version>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	
+	<modules>
+		<module>com.zhizhenxinde.polaris.common</module>
+		<module>com.zhizhenxinde.polaris.core</module>
+		<module>com.zhizhenxinde.polaris.restful</module>
+		<module>com.zhizhenxinde.polaris.weixin</module>
+		<module>com.zhizhenxinde.polaris.website</module>
+	</modules>
 
 	<dependencies>
 		<dependency>

@@ -1,4 +1,4 @@
-package com.zzxd.test.web.controller;
+package com.zhizhenxinde.polaris.restful.controller;
 
 import java.util.HashMap;
 import java.util.Map;

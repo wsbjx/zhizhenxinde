@@ -10,4 +10,12 @@
 	</parent>
 	<artifactId>com.zhizhenxinde.polaris.core</artifactId>
 	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.zhizhenxinde.polaris</groupId>
+			<artifactId>com.zhizhenxinde.polaris.common</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
 </project>

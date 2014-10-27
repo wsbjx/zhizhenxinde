@@ -10,4 +10,17 @@
 	</parent>
 	<artifactId>com.zhizhenxinde.polaris.restful</artifactId>
 	<packaging>jar</packaging>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.zhizhenxinde.polaris</groupId>
+			<artifactId>com.zhizhenxinde.polaris.common</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.zhizhenxinde.polaris</groupId>
+			<artifactId>com.zhizhenxinde.polaris.core</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
 </project>

@@ -4,3 +4,4 @@
 /.settings
 /target
 /.classpath
+/com.zhizhenxinde.polaris/com.zhizhenxinde.polaris.website/*.log

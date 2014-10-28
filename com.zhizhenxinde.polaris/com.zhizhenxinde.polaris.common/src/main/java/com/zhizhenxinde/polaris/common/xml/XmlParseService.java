@@ -57,7 +57,7 @@ public class XmlParseService
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	private <T> T autoParse(Class<T> cl, Element element) throws Exception
+	public <T> T autoParse(Class<T> cl, Element element) throws Exception
 	{
 		if (cl == null)
 		{

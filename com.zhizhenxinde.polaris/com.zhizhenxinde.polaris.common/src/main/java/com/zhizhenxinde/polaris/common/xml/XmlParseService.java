@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 import com.zhizhenxinde.polaris.common.utils.ReflectUtils;
 import com.zhizhenxinde.polaris.common.xml.annotation.XmlAttribute;
-import com.zhizhenxinde.polaris.common.xml.annotation.XmlChild;
+import com.zhizhenxinde.polaris.common.xml.annotation.XmlObject;
 import com.zhizhenxinde.polaris.common.xml.annotation.XmlContent;
 import com.zhizhenxinde.polaris.common.xml.annotation.XmlList;
 import com.zhizhenxinde.polaris.common.xml.annotation.XmlMap;
@@ -114,10 +114,10 @@ public class XmlParseService
 					field.set(target, attribute);
 				}
 			}
-			else if (field.isAnnotationPresent(XmlChild.class))
+			else if (field.isAnnotationPresent(XmlObject.class))
 			{
-				XmlChild xmlChild = (XmlChild) field.getAnnotation(XmlChild.class);
-				String fieldName = xmlChild.name();
+				XmlObject xmlObject = (XmlObject) field.getAnnotation(XmlObject.class);
+				String fieldName = xmlObject.name();
 				if (fieldName == null || fieldName.length() < 1)
 				{
 					fieldName = field.getName();

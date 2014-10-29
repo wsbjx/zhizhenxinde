@@ -13,7 +13,6 @@
 		<module>com.zhizhenxinde.polaris.common</module>
 		<module>com.zhizhenxinde.polaris.core</module>
 		<module>com.zhizhenxinde.polaris.restful</module>
-		<module>com.zhizhenxinde.polaris.weixin</module>
 		<module>com.zhizhenxinde.polaris.website</module>
 	</modules>
 	<build>

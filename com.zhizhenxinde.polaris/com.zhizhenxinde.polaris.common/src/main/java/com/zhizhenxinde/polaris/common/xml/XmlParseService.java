@@ -40,12 +40,12 @@ public class XmlParseService
 	 * @return
 	 * @throws Exception
 	 */
-	public <T> T autoParse(Class<T> cl, InputStream is) throws Exception
+	public <T> T parseObject(Class<T> cl, InputStream is) throws Exception
 	{
 		SAXReader reader = new SAXReader();
 		Document document = reader.read(is);
 		Element root = document.getRootElement();
-		return autoParse(cl, root);
+		return parseObject(cl, root);
 	}
 
 	/**
@@ -57,7 +57,7 @@ public class XmlParseService
 	 * @throws Exception
 	 */
 	@SuppressWarnings("unchecked")
-	public <T> T autoParse(Class<T> cl, Element element) throws Exception
+	public <T> T parseObject(Class<T> cl, Element element) throws Exception
 	{
 		if (cl == null)
 		{
@@ -128,7 +128,7 @@ public class XmlParseService
 					continue;
 				}
 				Class<?> fieldClass = field.getType();
-				Object childTarget = autoParse(fieldClass, childElement);
+				Object childTarget = parseObject(fieldClass, childElement);
 				field.setAccessible(true);
 				field.set(target, childTarget);
 			}
@@ -148,7 +148,7 @@ public class XmlParseService
 					{
 						continue;
 					}
-					Object childTarget = autoParse(xmlChildren.itemClass(), childElement);
+					Object childTarget = parseObject(xmlChildren.itemClass(), childElement);
 					field.setAccessible(true);
 					Collection<Object> list = (Collection<Object>) field.get(target);
 					if (list == null)
@@ -175,7 +175,7 @@ public class XmlParseService
 					{
 						continue;
 					}
-					Object childTarget = autoParse(xmlChildren.valueClass(), childElement);
+					Object childTarget = parseObject(xmlChildren.valueClass(), childElement);
 					String keyValue = childElement.attributeValue(xmlChildren.key());
 					Object key = keyValue;
 					if (xmlChildren.keyClass() != String.class)

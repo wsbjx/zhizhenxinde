@@ -22,7 +22,8 @@ import com.zhizhenxinde.polaris.common.xml.annotation.XmlList;
 import com.zhizhenxinde.polaris.common.xml.annotation.XmlMap;
 
 /**
- * XML自动化解析服务
+ * XML自动化解析服务<br>
+ * 38CA试验<br>
  * 
  * @author wang.sheng
  * 

@@ -11,34 +11,24 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * 产品图片建模
+ * 用于存放文章中的图片附件
  * 
  * @author wang.sheng
  * 
  */
 @Entity
 @Table
-public class Picture
+public class ArticlePicture
 {
 	@Id
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
 	/**
-	 * 对应的产品ID
+	 * 对应的文章ID
 	 */
 	@Column
-	private String productId;
-	/**
-	 * 图片宽度
-	 */
-	@Column
-	private Integer width;
-	/**
-	 * 图片高度
-	 */
-	@Column
-	private Integer height;
+	private String articleId;
 	/**
 	 * 存放图片的二进制流
 	 */
@@ -55,34 +45,14 @@ public class Picture
 		this.id = id;
 	}
 
-	public String getProductId()
+	public String getArticleId()
 	{
-		return productId;
+		return articleId;
 	}
 
-	public void setProductId(String productId)
+	public void setArticleId(String articleId)
 	{
-		this.productId = productId;
-	}
-
-	public Integer getWidth()
-	{
-		return width;
-	}
-
-	public void setWidth(Integer width)
-	{
-		this.width = width;
-	}
-
-	public Integer getHeight()
-	{
-		return height;
-	}
-
-	public void setHeight(Integer height)
-	{
-		this.height = height;
+		this.articleId = articleId;
 	}
 
 	public Blob getContent()

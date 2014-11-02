@@ -1,5 +1,7 @@
 package com.zhizhenxinde.polaris.core.vo;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,39 +11,29 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * 客户建模
+ * 订单建模
  * 
  * @author wang.sheng
  * 
  */
 @Entity
 @Table
-public class Customer
+public class OrderForm
 {
 	@Id
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
 	/**
-	 * 姓名
+	 * 客户ID
 	 */
 	@Column
-	private String name;
+	private String customerId;
 	/**
-	 * 微信账号
+	 * 创建时间
 	 */
 	@Column
-	private String weixin;
-	/**
-	 * 电子邮箱
-	 */
-	@Column
-	private String email;
-	/**
-	 * 手机号
-	 */
-	@Column
-	private String mobile;
+	private Date createDate;
 	/**
 	 * 备注信息
 	 */
@@ -58,44 +50,24 @@ public class Customer
 		this.id = id;
 	}
 
-	public String getName()
+	public String getCustomerId()
 	{
-		return name;
+		return customerId;
 	}
 
-	public void setName(String name)
+	public void setCustomerId(String customerId)
 	{
-		this.name = name;
+		this.customerId = customerId;
 	}
 
-	public String getWeixin()
+	public Date getCreateDate()
 	{
-		return weixin;
+		return createDate;
 	}
 
-	public void setWeixin(String weixin)
+	public void setCreateDate(Date createDate)
 	{
-		this.weixin = weixin;
-	}
-
-	public String getEmail()
-	{
-		return email;
-	}
-
-	public void setEmail(String email)
-	{
-		this.email = email;
-	}
-
-	public String getMobile()
-	{
-		return mobile;
-	}
-
-	public void setMobile(String mobile)
-	{
-		this.mobile = mobile;
+		this.createDate = createDate;
 	}
 
 	public String getRemark()

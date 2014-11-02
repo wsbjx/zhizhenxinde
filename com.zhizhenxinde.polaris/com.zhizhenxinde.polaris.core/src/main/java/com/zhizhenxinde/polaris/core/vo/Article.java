@@ -1,6 +1,7 @@
 package com.zhizhenxinde.polaris.core.vo;
 
-import java.sql.Blob;
+import java.sql.Clob;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,39 +12,39 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * 产品图片建模
+ * 图文内容建模
  * 
  * @author wang.sheng
  * 
  */
 @Entity
 @Table
-public class Picture
+public class Article
 {
 	@Id
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
 	/**
-	 * 对应的产品ID
+	 * 标题
 	 */
 	@Column
-	private String productId;
+	private String title;
 	/**
-	 * 图片宽度
+	 * 摘要,关键字
 	 */
 	@Column
-	private Integer width;
+	private String summary;
 	/**
-	 * 图片高度
+	 * 创建日期
 	 */
 	@Column
-	private Integer height;
+	private Date createDate;
 	/**
-	 * 存放图片的二进制流
+	 * 大文本
 	 */
 	@Column
-	private Blob content;
+	private Clob content;
 
 	public String getId()
 	{
@@ -55,42 +56,42 @@ public class Picture
 		this.id = id;
 	}
 
-	public String getProductId()
+	public String getTitle()
 	{
-		return productId;
+		return title;
 	}
 
-	public void setProductId(String productId)
+	public void setTitle(String title)
 	{
-		this.productId = productId;
+		this.title = title;
 	}
 
-	public Integer getWidth()
+	public String getSummary()
 	{
-		return width;
+		return summary;
 	}
 
-	public void setWidth(Integer width)
+	public void setSummary(String summary)
 	{
-		this.width = width;
+		this.summary = summary;
 	}
 
-	public Integer getHeight()
+	public Date getCreateDate()
 	{
-		return height;
+		return createDate;
 	}
 
-	public void setHeight(Integer height)
+	public void setCreateDate(Date createDate)
 	{
-		this.height = height;
+		this.createDate = createDate;
 	}
 
-	public Blob getContent()
+	public Clob getContent()
 	{
 		return content;
 	}
 
-	public void setContent(Blob content)
+	public void setContent(Clob content)
 	{
 		this.content = content;
 	}

@@ -9,23 +9,34 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * 产品类别建模
+ * 订单组成单元
  * 
  * @author wang.sheng
  * 
  */
 @Entity
 @Table
-public class Category
+public class OrderFormItem
 {
 	@Id
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
+	/**
+	 * 对应产品ID
+	 */
 	@Column
-	private String parentId;
+	private String productId;
+	/**
+	 * 产品价格
+	 */
 	@Column
-	private String name;
+	private Integer price;
+	/**
+	 * 产品数量
+	 */
+	@Column
+	private Integer number;
 
 	public String getId()
 	{
@@ -37,24 +48,34 @@ public class Category
 		this.id = id;
 	}
 
-	public String getParentId()
+	public String getProductId()
 	{
-		return parentId;
+		return productId;
 	}
 
-	public void setParentId(String parentId)
+	public void setProductId(String productId)
 	{
-		this.parentId = parentId;
+		this.productId = productId;
 	}
 
-	public String getName()
+	public Integer getPrice()
 	{
-		return name;
+		return price;
 	}
 
-	public void setName(String name)
+	public void setPrice(Integer price)
 	{
-		this.name = name;
+		this.price = price;
+	}
+
+	public Integer getNumber()
+	{
+		return number;
+	}
+
+	public void setNumber(Integer number)
+	{
+		this.number = number;
 	}
 
 }

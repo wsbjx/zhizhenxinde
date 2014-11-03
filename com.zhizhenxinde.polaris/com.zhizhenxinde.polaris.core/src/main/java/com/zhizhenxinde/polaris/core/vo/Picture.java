@@ -1,6 +1,5 @@
 package com.zhizhenxinde.polaris.core.vo;
 
-import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -26,10 +25,10 @@ public class Picture
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
 	/**
-	 * 图片文件的后缀名
+	 * 图片文件名
 	 */
 	@Column
-	private String suffix;
+	private String fileName;
 	/**
 	 * 创建日期
 	 */
@@ -40,11 +39,6 @@ public class Picture
 	 */
 	@Column
 	private String remark;
-	/**
-	 * 二进制内容
-	 */
-	@Column
-	private Blob content;
 
 	public String getId()
 	{
@@ -56,14 +50,14 @@ public class Picture
 		this.id = id;
 	}
 
-	public String getSuffix()
+	public String getFileName()
 	{
-		return suffix;
+		return fileName;
 	}
 
-	public void setSuffix(String suffix)
+	public void setFileName(String fileName)
 	{
-		this.suffix = suffix;
+		this.fileName = fileName;
 	}
 
 	public Date getCreateDate()
@@ -84,16 +78,6 @@ public class Picture
 	public void setRemark(String remark)
 	{
 		this.remark = remark;
-	}
-
-	public Blob getContent()
-	{
-		return content;
-	}
-
-	public void setContent(Blob content)
-	{
-		this.content = content;
 	}
 
 }

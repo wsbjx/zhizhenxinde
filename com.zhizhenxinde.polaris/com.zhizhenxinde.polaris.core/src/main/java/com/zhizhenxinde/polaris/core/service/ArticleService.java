@@ -4,17 +4,17 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.zhizhenxinde.polaris.core.dao.ProductDao;
+import com.zhizhenxinde.polaris.core.dao.ArticleDao;
 
 /**
- * 产品服务
+ * 文章服务
  * 
  * @author wang.sheng
  * 
  */
 @Service
-public class ProductService
+public class ArticleService
 {
 	@Resource
-	private ProductDao productDao;
+	private ArticleDao articleDao;
 }

@@ -73,14 +73,14 @@ public class PictureDao
 	 */
 	public void setContent(final String id, final InputStream is)
 	{
-		jdbcTemplate.execute("update Picture t set t.content=? where t.id=?", new PreparedStatementCallback<Object>()
+		jdbcTemplate.execute("update Picture t set t.content=? where t.id=?", new PreparedStatementCallback<Integer>()
 		{
 			@Override
-			public Object doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException
+			public Integer doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException
 			{
 				ps.setBinaryStream(1, is);
 				ps.setString(2, id);
-				return null;
+				return ps.executeUpdate();
 			}
 		});
 	}

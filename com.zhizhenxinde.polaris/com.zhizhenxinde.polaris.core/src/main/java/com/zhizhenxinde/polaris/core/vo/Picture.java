@@ -1,6 +1,7 @@
 package com.zhizhenxinde.polaris.core.vo;
 
 import java.sql.Blob;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,26 +12,36 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * 用于存放文章中的图片附件
+ * 图片表建模
  * 
  * @author wang.sheng
  * 
  */
 @Entity
 @Table
-public class ArticlePicture
+public class Picture
 {
 	@Id
 	@GenericGenerator(name = "system-uuid", strategy = "uuid")
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
 	/**
-	 * 对应的文章ID
+	 * 图片文件的后缀名
 	 */
 	@Column
-	private String articleId;
+	private String suffix;
 	/**
-	 * 存放图片的二进制流
+	 * 创建日期
+	 */
+	@Column
+	private Date createDate;
+	/**
+	 * 备注信息
+	 */
+	@Column
+	private String remark;
+	/**
+	 * 二进制内容
 	 */
 	@Column
 	private Blob content;
@@ -45,14 +56,34 @@ public class ArticlePicture
 		this.id = id;
 	}
 
-	public String getArticleId()
+	public String getSuffix()
 	{
-		return articleId;
+		return suffix;
 	}
 
-	public void setArticleId(String articleId)
+	public void setSuffix(String suffix)
 	{
-		this.articleId = articleId;
+		this.suffix = suffix;
+	}
+
+	public Date getCreateDate()
+	{
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate)
+	{
+		this.createDate = createDate;
+	}
+
+	public String getRemark()
+	{
+		return remark;
+	}
+
+	public void setRemark(String remark)
+	{
+		this.remark = remark;
 	}
 
 	public Blob getContent()

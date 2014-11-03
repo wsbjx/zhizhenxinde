@@ -1,7 +1,5 @@
 package com.zhizhenxinde.polaris.core.vo;
 
-import java.sql.Blob;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,10 +30,10 @@ public class ProductPicture
 	@Column
 	private String productId;
 	/**
-	 * 存放图片的二进制流
+	 * 对应图片表的ID
 	 */
 	@Column
-	private Blob content;
+	private String pictureId;
 
 	public String getId()
 	{
@@ -57,14 +55,14 @@ public class ProductPicture
 		this.productId = productId;
 	}
 
-	public Blob getContent()
+	public String getPictureId()
 	{
-		return content;
+		return pictureId;
 	}
 
-	public void setContent(Blob content)
+	public void setPictureId(String pictureId)
 	{
-		this.content = content;
+		this.pictureId = pictureId;
 	}
 
 }

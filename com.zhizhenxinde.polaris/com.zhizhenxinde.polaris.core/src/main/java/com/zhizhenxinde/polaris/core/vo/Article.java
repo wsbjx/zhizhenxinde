@@ -1,7 +1,6 @@
 package com.zhizhenxinde.polaris.core.vo;
 
 import java.sql.Clob;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,7 +25,7 @@ public class Article
 	@GeneratedValue(generator = "system-uuid")
 	private String id;
 	/**
-	 * 标题
+	 * 文章标题
 	 */
 	@Column
 	private String title;
@@ -35,11 +34,6 @@ public class Article
 	 */
 	@Column
 	private String summary;
-	/**
-	 * 创建日期
-	 */
-	@Column
-	private Date createDate;
 	/**
 	 * 大文本
 	 */
@@ -74,16 +68,6 @@ public class Article
 	public void setSummary(String summary)
 	{
 		this.summary = summary;
-	}
-
-	public Date getCreateDate()
-	{
-		return createDate;
-	}
-
-	public void setCreateDate(Date createDate)
-	{
-		this.createDate = createDate;
 	}
 
 	public Clob getContent()

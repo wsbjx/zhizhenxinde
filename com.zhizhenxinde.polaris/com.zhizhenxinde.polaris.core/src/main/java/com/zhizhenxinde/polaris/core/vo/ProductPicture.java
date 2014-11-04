@@ -27,12 +27,12 @@ public class ProductPicture
 	/**
 	 * 对应的产品ID
 	 */
-	@Column
+	@Column(nullable = false)
 	private String productId;
 	/**
 	 * 对应图片表的ID
 	 */
-	@Column
+	@Column(nullable = false)
 	private String pictureId;
 
 	public String getId()

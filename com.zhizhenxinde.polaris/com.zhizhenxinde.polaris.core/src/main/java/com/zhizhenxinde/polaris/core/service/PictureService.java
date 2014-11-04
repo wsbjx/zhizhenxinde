@@ -118,7 +118,7 @@ public class PictureService
 	 * @param remark
 	 * @param uploadFile
 	 */
-	public void add(String remark, MultipartFile uploadFile)
+	public Picture add(String remark, MultipartFile uploadFile)
 	{
 		Picture picture = new Picture();
 		picture.setRemark(remark);
@@ -150,7 +150,7 @@ public class PictureService
 				}
 			}
 		}
-
+		return picture;
 	}
 
 }

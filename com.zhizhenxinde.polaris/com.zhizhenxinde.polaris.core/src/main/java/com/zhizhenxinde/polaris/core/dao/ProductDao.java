@@ -29,6 +29,11 @@ public class ProductDao
 		this.hibernateTemplate.update(product);
 	}
 
+	public Product getProduct(String id)
+	{
+		return this.hibernateTemplate.queryForObject("from Product t where t.id=?", new Object[] { id }, Product.class);
+	}
+
 	public Product[] getProducts()
 	{
 		return this.hibernateTemplate.queryForArray("from Product t", null, Product.class);

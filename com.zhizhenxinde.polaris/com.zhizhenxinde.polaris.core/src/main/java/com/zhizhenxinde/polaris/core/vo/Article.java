@@ -1,6 +1,6 @@
 package com.zhizhenxinde.polaris.core.vo;
 
-import java.sql.Clob;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,10 +35,10 @@ public class Article
 	@Column
 	private String summary;
 	/**
-	 * 大文本
+	 * 创建日期
 	 */
 	@Column
-	private Clob content;
+	private Date createDate;
 
 	public String getId()
 	{
@@ -70,14 +70,14 @@ public class Article
 		this.summary = summary;
 	}
 
-	public Clob getContent()
+	public Date getCreateDate()
 	{
-		return content;
+		return createDate;
 	}
 
-	public void setContent(Clob content)
+	public void setCreateDate(Date createDate)
 	{
-		this.content = content;
+		this.createDate = createDate;
 	}
 
 }

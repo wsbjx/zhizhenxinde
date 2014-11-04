@@ -3,14 +3,21 @@ package com.zhizhenxinde.polaris.restful.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/test")
-public class TestController
+import com.zhizhenxinde.polaris.core.service.ProductService;
+
+@Controller
+@RequestMapping("/product")
+public class ProductController
 {
+	@Resource
+	private ProductService productService;
+	
 	@RequestMapping(value = "/enter", method = RequestMethod.GET)
 	public Object test()
 	{

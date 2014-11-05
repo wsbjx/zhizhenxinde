@@ -11,8 +11,6 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.zhizhenxinde.polaris.core.dao.PictureDao;
@@ -25,10 +23,11 @@ import com.zhizhenxinde.polaris.core.vo.Picture;
  * 
  */
 @Service
-@Transactional(propagation = Propagation.REQUIRED)
 public class PictureService
 {
 	Log log = LogFactory.getLog(getClass());
+
+	private static final long PICTURE_MAX_SIZE = 5 * 1024 * 1024L;
 
 	@Resource
 	private PictureDao pictureDao;
@@ -41,6 +40,17 @@ public class PictureService
 	public Picture[] getPictures()
 	{
 		return pictureDao.getPictures();
+	}
+
+	/**
+	 * 根据ID获取图片信息
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Picture getPicture(String id)
+	{
+		return pictureDao.getPicture(id);
 	}
 
 	/**
@@ -120,6 +130,16 @@ public class PictureService
 	 */
 	public Picture add(String remark, MultipartFile uploadFile)
 	{
+		if (uploadFile.isEmpty())
+		{
+			// 上传文件不能为空
+			throw new RuntimeException("Upload File cannot Empty!");
+		}
+		if (uploadFile.getSize() > PICTURE_MAX_SIZE)
+		{
+			// 文件超过最大限制
+			throw new RuntimeException("Upload File's Size is more than 5MB!");
+		}
 		Picture picture = new Picture();
 		picture.setRemark(remark);
 		picture.setFileName(uploadFile.getOriginalFilename());
@@ -152,5 +172,4 @@ public class PictureService
 		}
 		return picture;
 	}
-
 }

@@ -43,7 +43,7 @@ public class Product
 	@Column
 	private String description;
 	/**
-	 * 价格
+	 * 价格(单位:元)
 	 */
 	@Column
 	private Integer price;
@@ -53,7 +53,12 @@ public class Product
 	@Column
 	private Date onlineDate;
 	/**
-	 * 详细信息ID
+	 * 用作产品封面的图片ID
+	 */
+	@Column
+	private String pictureId;
+	/**
+	 * 产品详细介绍对应的文章
 	 */
 	@Column
 	private String articleId;
@@ -116,6 +121,16 @@ public class Product
 	public void setOnlineDate(Date onlineDate)
 	{
 		this.onlineDate = onlineDate;
+	}
+
+	public String getPictureId()
+	{
+		return pictureId;
+	}
+
+	public void setPictureId(String pictureId)
+	{
+		this.pictureId = pictureId;
 	}
 
 	public String getArticleId()

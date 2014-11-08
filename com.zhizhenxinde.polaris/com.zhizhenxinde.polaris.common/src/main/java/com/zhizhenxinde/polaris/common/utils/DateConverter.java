@@ -21,8 +21,7 @@ public class DateConverter implements Converter<String, Date>
 {
 	Log log = LogFactory.getLog(getClass());
 
-	private static String[] DATE_FORMATS = new String[]
-	{ "yyyy-MM-dd", "yyyy-MM-dd HH:mm", "yyyy-MM-dd HH:mm:ss" };
+	private static String[] DATE_FORMATS = new String[] { "yyyy-MM-dd", "yyyy-MM-dd HH:mm", "yyyy-MM-dd HH:mm:ss" };
 
 	@Override
 	public Date convert(String source)
